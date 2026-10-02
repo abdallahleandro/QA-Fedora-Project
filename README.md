@@ -26,7 +26,7 @@ Repositório com os relatórios dos Test Days e contribuições de QA que partic
 
 | Bug | Componente | Status |
 |---|---|---|
-| [Bugzilla #XXXXXXX](https://bugzilla.redhat.com/show_bug.cgi?id=XXXXXXX) | anaconda | NEW |
+| [Bugzilla #2543511](https://bugzilla.redhat.com/show_bug.cgi?id=2543511) | anaconda | NEW | anaconda | NEW |
 
 ## ✅ Karma no Bodhi
 
