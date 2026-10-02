@@ -25,10 +25,8 @@ Repositório com os relatórios dos Test Days e contribuições de QA que partic
 ## 🐛 Bugs Reportados
 
 | Bug | Componente | Status | Detalhes |
-|-----|-----------|--------|--------|
-
+|-----|-----------|--------|----------|
 | [Bugzilla #2543511](https://bugzilla.redhat.com/show_bug.cgi?id=2543511) | anaconda | NEW | [Detalhes](bugs/2026-09-stratis-encrypted-pool.md) |
-
 ## ✅ Karma no Bodhi
 
 - `beets-2.14.1-1.fc45` — +1 (Works for me)
