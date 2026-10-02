@@ -19,7 +19,7 @@ Repositório com os relatórios dos Test Days e contribuições de QA que partic
 | Data | Evento | Resultado | Relatório |
 |---|---|---|---|
 | 2026-09-21 | KDE Plasma 6.7 (F45) | 7/7 Pass | [Ver](test-days/2026-09-plasma-6.7.md) |
-| 2026-09-21 | CoreOS 45 (F45) | 1 Fail (bug) | [Ver](./testdays/coreos-45/README.md) |
+| 2026-09-21 | CoreOS 45 (F45) | 1 Fail (bug) | [Ver](test-days/2026-09-coreos-45.md) |
 | 2026-09-28 | Anaconda F45 — Stratis | 5 Pass, 1 Fail | [Ver](test-days/2026-09-anaconda-f45.md) |
 
 ## 🐛 Bugs Reportados
