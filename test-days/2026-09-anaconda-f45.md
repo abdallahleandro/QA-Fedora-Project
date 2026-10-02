@@ -76,14 +76,6 @@
 
 ---
 
-## 📸 Evidências
-
-- `images/stratis-emergency-mode.png` — emergency mode após desbloqueio
-- `images/plymouth-password.png` — prompt de senha do pool
-- `images/stratis-pools-list.png` — pools ativos após o boot
-
----
-
 ## 🔗 Links úteis
 
 - [Resultado no Test Day](https://testdays.fedoraproject.org/testday/28)
