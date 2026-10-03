@@ -1,9 +1,13 @@
 # Bug: Stratis encrypted pool fails to boot
 
 **Bugzilla:** https://bugzilla.redhat.com/show_bug.cgi?id=2543511
+
 **Componente:** anaconda
+
 **Versão:** Fedora 45
+
 **Severidade:** High
+
 **Status:** NEW
 
 ---
