@@ -9,10 +9,19 @@ Repositório com os relatórios dos Test Days e contribuições de QA que partic
 
 ## 👤 Sobre
 
-- **Contribuidor:** Leandro Abdallah
-- **FAS:** leandroabdallah
-- **Matrix:** @leandroabdallah:fedoraproject.org
-- **Localização:** Brasil
+**Contribuidor:** Leandro Abdallah
+
+**FAS:** [leandroabdallah](https://accounts.fedoraproject.org/user/leandroabdallah/)
+
+**Matrix:** [@leandroabdallah:fedoraproject.org](https://matrix.to/#/@leandroabdallah:fedoraproject.org)
+
+**Localização:** Brasil
+
+Sou **QA Volunteer no Fedora Project**, atuando na validação de funcionalidades antes dos releases oficiais. Minha contribuição envolve a execução de **Test Days**, reporte de bugs no **Bugzilla**, votação de **karma no Bodhi** e participação ativa nos canais **#quality** e **fedora-br** (Matrix).
+
+Desde setembro de 2026, venho testando componentes críticos do Fedora — desde o ambiente gráfico KDE Plasma, passando pelo instalador Anaconda e o gerenciamento de armazenamento com Stratis, até o runtime de containers Podman com o novo conmon-v3.
+
+Acredito que **qualidade de software** é uma responsabilidade compartilhada, e que contribuir com testes em projetos open source é uma das formas mais diretas de impactar positivamente milhões de usuários.
 
 ## 🧪 Test Days
 
