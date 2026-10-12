@@ -1,5 +1,9 @@
 # Test Day: Anaconda F45 — Stratis
 
+<img width="300" height="51" alt="arquivo colado" src="https://github.com/user-attachments/assets/293ca449-9f02-4d66-94fa-373aa6477f49" />
+
+
+
 **Data:** 28 de setembro a 02 de outubro de 2026
 
 **Página oficial:** https://testdays.fedoraproject.org/testday/28
