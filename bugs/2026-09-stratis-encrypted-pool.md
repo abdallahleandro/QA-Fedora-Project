@@ -91,3 +91,5 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - **Severidade:** High
 
 ---
+
+- [Comentário 10 do John Baublitz](https://bugzilla.redhat.com/show_bug.cgi?id=2543511#c10) — confirmação do bug e proposta de correção.
