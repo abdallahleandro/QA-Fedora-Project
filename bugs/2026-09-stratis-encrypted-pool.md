@@ -62,3 +62,32 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - **Pool UUID:** `0fb7306e-a1d7-4f88-9aea-cc2e405462fb`
 
 ---
+
+## 💬 Discussão
+
+### Cronologia
+
+| Data | Evento |
+|------|--------|
+| 29/09/2026 | Bug reportado por mim (abdallahleandrodev) |
+| 30/09/2026 | Vojtech Trefny (dev) tentou reproduzir e **não conseguiu** |
+| 30/09/2026 | Em uma segunda tentativa minha, o problema **também não se reproduziu** |
+| 15/10/2026 | **Petr Sklenar** (QA) reproduziu o bug em um ambiente com 5 discos, confirmando que é um problema real |
+| 15/10/2026 | **John Baublitz** (dev) confirmou que é um bug e está trabalhando em uma correção |
+
+### Análise
+
+- Inicialmente, o bug parecia **intermitente** — não se reproduzia em todas as tentativas
+- O QA **Petr Sklenar** confirmou que o problema **é real** e está relacionado ao `stratisd`
+- A investigação revelou que, em emergency mode, o `stratis pool list` falha porque o **D-Bus não está disponível**
+- O desenvolvedor **John Baublitz** identificou a causa e vai propor uma correção
+- O componente correto foi alterado de `anaconda` para **`stratisd`**
+
+### Status atual
+
+- **Status:** ASSIGNED (correção em andamento)
+- **Assignee:** mulhern
+- **Componente:** stratisd
+- **Severidade:** High
+
+---
