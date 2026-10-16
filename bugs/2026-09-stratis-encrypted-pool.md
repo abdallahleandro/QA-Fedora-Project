@@ -73,23 +73,26 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 | 30/09/2026 | Vojtech Trefny (dev) tentou reproduzir e **não conseguiu** |
 | 30/09/2026 | Em uma segunda tentativa minha, o problema **também não se reproduziu** |
 | 15/10/2026 | **Petr Sklenar** (QA) reproduziu o bug em um ambiente com 5 discos, confirmando que é um problema real |
-| 15/10/2026 | **John Baublitz** (dev) confirmou que é um bug e está trabalhando em uma correção |
+| 15/10/2026 | **John Baublitz** (dev) confirmou que é um bug e propôs uma correção |
+| 16/10/2026 | **Petr Sklenar** testou a correção do COPR e o problema **persiste** |
 
 ### Análise
 
 - Inicialmente, o bug parecia **intermitente** — não se reproduzia em todas as tentativas
 - O QA **Petr Sklenar** confirmou que o problema **é real** e está relacionado ao `stratisd`
 - A investigação revelou que, em emergency mode, o `stratis pool list` falha porque o **D-Bus não está disponível**
-- O desenvolvedor **John Baublitz** identificou a causa e vai propor uma correção
-- O componente correto foi alterado de `anaconda` para **`stratisd`**
+- O desenvolvedor **John Baublitz** propôs uma correção, mas o teste com pacotes do COPR **não resolveu** o problema
+- O bug continua em investigação ativa
 
 ### Status atual
 
-- **Status:** ASSIGNED (correção em andamento)
+- **Status:** POST (correção proposta, mas ainda não validada)
 - **Assignee:** mulhern
 - **Componente:** stratisd
+- **QA Contact:** Petr Sklenar
 - **Severidade:** High
+- **Última atualização:** 16/10/2026 — correção do COPR testada e **não resolveu**
 
----
+### Links úteis
 
-- [Comentário 10 do John Baublitz](https://bugzilla.redhat.com/show_bug.cgi?id=2543511#c10) — confirmação do bug e proposta de correção.
+- [Logs do teste do Petr Sklenar](https://psklenar.fedorapeople.org/bz2543511/)
