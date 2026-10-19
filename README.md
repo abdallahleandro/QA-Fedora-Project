@@ -26,11 +26,12 @@ Acredito que **qualidade de software** é uma responsabilidade compartilhada, e 
 ## 🧪 Test Days
 
 | Data | Evento | Resultado | Relatório |
-|---|---|---|---|
+|------|--------|-----------|-----------|
 | 2026-09-21 | KDE Plasma 6.7 (F45) | 7/7 Pass | [Ver](test-days/2026-09-plasma-6.7.md) |
-| 2026-09-21 | CoreOS 45 (F45) | 1 Fail (bug) | [Ver](test-days/2026-09-coreos-45.md) |
+| 2026-09-21 | CoreOS 45 (F45) | 1 Fail (bug conhecido) | [Ver](test-days/2026-09-coreos-45.md) |
 | 2026-09-28 | Anaconda F45 — Stratis | 5 Pass, 1 Fail | [Ver](test-days/2026-09-anaconda-f45.md) |
 | 2026-10-12 | Podman Conmon-v3 (F44) | 7/7 Pass | [Ver](test-days/2026-10-podman-conmon-v3.md) |
+| 2026-10-19 | GRUB EFI for Confidential Computing (F45) | 1/1 Pass | [Ver](test-days/2026-10-grub-cc.md) |
 
 ## 🐛 Bugs Reportados
 
