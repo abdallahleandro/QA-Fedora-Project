@@ -78,6 +78,7 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 | 16/10/2026 | **Petr Sklenar** testou a correção do COPR e o problema **persistiu** |
 | 16/10/2026 | **mulhern** (dev) explicou que o `initramfs` precisa ser regenerado para incluir a correção |
 | 16/10/2026 | Após regenerar o `initramfs` (`dracut --force --regenerate-all`), o cenário mudou: a raiz `/` monta, mas o pool inteiro ainda falha em ~34% dos reboots (20 testes) |
+| 20/10/2026 | **Adam Williamson** (Fedora QA) propôs o bug como **Final Blocker** do Fedora 45, citando a violação do critério de boot com partições criptografadas |
 
 ### Análise
 
@@ -86,6 +87,7 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - O desenvolvedor **John Baublitz** propôs uma correção e o componente foi alterado para `stratisd`
 - A primeira correção resolveu a falha onde o `/` não montava, mas ainda há um problema intermitente (pool quebra em ~34% dos boots)
 - A equipe de desenvolvimento continua investigando a causa raiz da falha restante
+- O bug foi escalado como **candidato a bloqueador do lançamento** do Fedora 45, devido ao impacto na experiência do usuário e ao fato de o Stratis ser um recurso anunciado
 
 ### Status atual
 
@@ -94,7 +96,7 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - **Componente:** stratisd
 - **QA Contact:** Petr Sklenar
 - **Severidade:** High
-- **Última atualização:** 16/10/2026 — correção parcial aplicada, problema residual em investigação
+- **Última atualização:** 20/10/2026 — proposto como Final Blocker para o Fedora 45
 
 ### Links úteis
 
