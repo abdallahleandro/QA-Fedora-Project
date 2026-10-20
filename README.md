@@ -7,6 +7,7 @@
 
 Repositório com os relatórios dos Test Days e contribuições de QA que participei no Fedora Project.
 
+
 ## 👤 Sobre
 
 **Contribuidor:** Leandro Abdallah
@@ -19,9 +20,11 @@ Repositório com os relatórios dos Test Days e contribuições de QA que partic
 
 Sou **QA Volunteer no Fedora Project**, atuando na validação de funcionalidades antes dos releases oficiais. Minha contribuição envolve a execução de **Test Days**, reporte de bugs no **Bugzilla**, votação de **karma no Bodhi** e participação ativa nos canais **#quality** e **fedora-br** (Matrix).
 
-Desde setembro de 2026, venho testando componentes críticos do Fedora — desde o ambiente gráfico KDE Plasma, passando pelo instalador Anaconda e o gerenciamento de armazenamento com Stratis, até o runtime de containers Podman com o novo conmon-v3.
+Utilizo ambientes virtualizados (KVM/QEMU) para testar desde o ambiente gráfico e instaladores até o gerenciamento de armazenamento e runtime de containers, sempre buscando identificar regressões e documentar o comportamento do sistema.
 
 Acredito que **qualidade de software** é uma responsabilidade compartilhada, e que contribuir com testes em projetos open source é uma das formas mais diretas de impactar positivamente milhões de usuários.
+
+---
 
 ## 🧪 Test Days
 
