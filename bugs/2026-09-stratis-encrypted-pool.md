@@ -2,13 +2,13 @@
 
 **Bugzilla:** https://bugzilla.redhat.com/show_bug.cgi?id=2543511
 
-**Componente:** anaconda
+**Componente:** stratisd
 
 **Versão:** Fedora 45
 
 **Severidade:** High
 
-**Status:** NEW
+**Status:** POST
 
 ---
 
@@ -40,8 +40,9 @@ O prompt de senha aparece corretamente, a senha é aceita, mas o `dracut` não e
 ## ❌ Resultado real
 
 Após digitar a senha corretamente, o sistema entra em emergency mode com:
-
----
+Warning: /dev/stratis/fedorapool/root does not exist
+Generating "/run/initramfs/rdsosreport.txt"
+Entering emergency mode.
 
 O pool é desbloqueado (o prompt de senha funciona), mas o `dracut` não encontra o filesystem raiz.
 
@@ -74,25 +75,28 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 | 30/09/2026 | Em uma segunda tentativa minha, o problema **também não se reproduziu** |
 | 15/10/2026 | **Petr Sklenar** (QA) reproduziu o bug em um ambiente com 5 discos, confirmando que é um problema real |
 | 15/10/2026 | **John Baublitz** (dev) confirmou que é um bug e propôs uma correção |
-| 16/10/2026 | **Petr Sklenar** testou a correção do COPR e o problema **persiste** |
+| 16/10/2026 | **Petr Sklenar** testou a correção do COPR e o problema **persistiu** |
+| 16/10/2026 | **mulhern** (dev) explicou que o `initramfs` precisa ser regenerado para incluir a correção |
+| 16/10/2026 | Após regenerar o `initramfs` (`dracut --force --regenerate-all`), o cenário mudou: a raiz `/` monta, mas o pool inteiro ainda falha em ~34% dos reboots (20 testes) |
 
 ### Análise
 
 - Inicialmente, o bug parecia **intermitente** — não se reproduzia em todas as tentativas
 - O QA **Petr Sklenar** confirmou que o problema **é real** e está relacionado ao `stratisd`
-- A investigação revelou que, em emergency mode, o `stratis pool list` falha porque o **D-Bus não está disponível**
-- O desenvolvedor **John Baublitz** propôs uma correção, mas o teste com pacotes do COPR **não resolveu** o problema
-- O bug continua em investigação ativa
+- O desenvolvedor **John Baublitz** propôs uma correção e o componente foi alterado para `stratisd`
+- A primeira correção resolveu a falha onde o `/` não montava, mas ainda há um problema intermitente (pool quebra em ~34% dos boots)
+- A equipe de desenvolvimento continua investigando a causa raiz da falha restante
 
 ### Status atual
 
-- **Status:** POST (correção proposta, mas ainda não validada)
+- **Status:** POST (correção proposta, mas ainda não validada em 100% dos casos)
 - **Assignee:** mulhern
 - **Componente:** stratisd
 - **QA Contact:** Petr Sklenar
 - **Severidade:** High
-- **Última atualização:** 16/10/2026 — correção do COPR testada e **não resolveu**
+- **Última atualização:** 16/10/2026 — correção parcial aplicada, problema residual em investigação
 
 ### Links úteis
 
-- [Logs do teste do Petr Sklenar](https://psklenar.fedorapeople.org/bz2543511/)
+- [Logs do teste do Petr Sklenar (inicial)](https://psklenar.fedorapeople.org/bz2543511/)
+- [Logs após regeneração do dracut](https://psklenar.fedorapeople.org/bz2543511/after-dracut-regenerate/)
