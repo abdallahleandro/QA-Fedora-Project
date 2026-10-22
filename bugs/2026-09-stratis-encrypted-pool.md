@@ -8,7 +8,7 @@
 
 **Severidade:** High
 
-**Status:** POST
+**Status:** ASSIGNED
 
 ---
 
@@ -79,6 +79,7 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 | 16/10/2026 | **mulhern** (dev) explicou que o `initramfs` precisa ser regenerado para incluir a correção |
 | 16/10/2026 | Após regenerar o `initramfs` (`dracut --force --regenerate-all`), o cenário mudou: a raiz `/` monta, mas o pool inteiro ainda falha em ~34% dos reboots (20 testes) |
 | 20/10/2026 | **Adam Williamson** (Fedora QA) propôs o bug como **Final Blocker** do Fedora 45, citando a violação do critério de boot com partições criptografadas |
+| 22/10/2026 | **Adam Williamson** (Fedora QA) anunciou que o bug foi **aceito como bloqueador oficial (AcceptedBlocker)** na reunião F45 Go/No-Go #2, impedindo o lançamento do Fedora 45 até ser corrigido ou dispensado. |
 
 ### Análise
 
@@ -88,17 +89,19 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - A primeira correção resolveu a falha onde o `/` não montava, mas ainda há um problema intermitente (pool quebra em ~34% dos boots)
 - A equipe de desenvolvimento continua investigando a causa raiz da falha restante
 - O bug foi escalado como **candidato a bloqueador do lançamento** do Fedora 45, devido ao impacto na experiência do usuário e ao fato de o Stratis ser um recurso anunciado
+- O bug foi **aceito como bloqueador oficial** do Fedora 45 (Final Blocker). Isso significa que a equipe de desenvolvimento tem prioridade máxima para corrigi-lo antes do lançamento.
 
 ### Status atual
 
-- **Status:** POST (correção proposta, mas ainda não validada em 100% dos casos)
+- **Status:** ASSIGNED (AcceptedBlocker)
 - **Assignee:** mulhern
 - **Componente:** stratisd
 - **QA Contact:** Petr Sklenar
 - **Severidade:** High
-- **Última atualização:** 20/10/2026 — proposto como Final Blocker para o Fedora 45
+- **Última atualização:** 22/10/2026 — aceito como bloqueador oficial do Fedora 45 na reunião Go/No-Go
 
 ### Links úteis
 
 - [Logs do teste do Petr Sklenar (inicial)](https://psklenar.fedorapeople.org/bz2543511/)
 - [Logs após regeneração do dracut](https://psklenar.fedorapeople.org/bz2543511/after-dracut-regenerate/)
+- [F45 Go/No-Go Meeting #2 (22/10/2026)](https://meetbot-raw.fedoraproject.org/meeting_matrix_fedoraproject-org/2026-10-22/f45-final-go-no-go-meeting.2026-10-22-17.00.html)
