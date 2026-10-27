@@ -83,6 +83,8 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 | 23/10/2026 | **Adam Williamson** tentou reproduzir com 1 disco e **não conseguiu** (6 boots com sucesso) |
 | 23/10/2026 | **John Baublitz** (dev) **reproduziu o bug** e descobriu a causa: uma *race condition* entre a montagem do pool e o registro dos dispositivos pelo `udev`, que só acontece quando o pool usa **múltiplos discos** |
 | 23/10/2026 | **John Baublitz** anunciou que já tem uma correção em andamento para o problema |
+| 26/10/2026 | **Adam Williamson** cobrou urgência na correção para não atrasar o lançamento do Fedora 45 |
+| 26/10/2026 | **John Baublitz** publicou a correção final (PR #4113) e testou com sucesso em 5 reboots usando um pool com 5 discos |
 
 ### Análise
 
@@ -94,6 +96,7 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - O bug foi escalado como **candidato a bloqueador do lançamento** do Fedora 45, devido ao impacto na experiência do usuário e ao fato de o Stratis ser um recurso anunciado
 - O bug foi **aceito como bloqueador oficial** do Fedora 45 (Final Blocker). Isso significa que a equipe de desenvolvimento tem prioridade máxima para corrigi-lo antes do lançamento.
 - A causa raiz foi identificada: o bug ocorre apenas em pools com **múltiplos discos**, devido a uma *race condition* na inicialização (o sistema tenta montar o pool antes do `udev` registrar todos os discos). Uma correção já está sendo desenvolvida.
+- O desenvolvedor **John Baublitz** publicou a correção final (PR #4113) e validou com sucesso em um ambiente de múltiplos discos. A correção está aguardando o build do pacote e a publicação no repositório de testes.
 
 ### Status atual
 
@@ -103,9 +106,16 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - **QA Contact:** Petr Sklenar
 - **Severidade:** High
 - **Última atualização:** 23/10/2026 — causa raiz identificada (race condition com múltiplos discos) e correção em desenvolvimento
+- **Status:** ASSIGNED (AcceptedBlocker) - Correção publicada e aguardando build
+- **Assignee:** mulhern
+- **Componente:** stratisd
+- **QA Contact:** Petr Sklenar
+- **Severidade:** High
+- **Última atualização:** 26/10/2026 — correção final publicada (PR #4113) e aguardando build
 
 ### Links úteis
 
 - [Logs do teste do Petr Sklenar (inicial)](https://psklenar.fedorapeople.org/bz2543511/)
 - [Logs após regeneração do dracut](https://psklenar.fedorapeople.org/bz2543511/after-dracut-regenerate/)
 - [F45 Go/No-Go Meeting #2 (22/10/2026)](https://meetbot-raw.fedoraproject.org/meeting_matrix_fedoraproject-org/2026-10-22/f45-final-go-no-go-meeting.2026-10-22-17.00.html)
+- [PR #4113 - Correção do bug](https://github.com/stratis-storage/stratisd/pull/4113)
