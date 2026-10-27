@@ -101,7 +101,7 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - A causa raiz foi identificada: o bug ocorre apenas em pools com **múltiplos discos**, devido a uma *race condition* na inicialização (o sistema tenta montar o pool antes do `udev` registrar todos os discos). Uma correção já está sendo desenvolvida.
 - O desenvolvedor **John Baublitz** publicou a correção final (PR #4113) e validou com sucesso em um ambiente de múltiplos discos. A correção está aguardando o build do pacote e a publicação no repositório de testes.
 - A correção proposta (PR #4113) **não resolveu o problema** no ambiente de teste do QA. O bug continua em investigação, e o prazo para o lançamento do Fedora 45 está apertado (pode ser dispensado/waived).
-  
+
 ### Status atual
 
 - **Status:** ASSIGNED (AcceptedBlocker)
@@ -109,14 +109,7 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - **Componente:** stratisd
 - **QA Contact:** Petr Sklenar
 - **Severidade:** High
-- **Última atualização:** 23/10/2026 — causa raiz identificada (race condition com múltiplos discos) e correção em desenvolvimento
-- **Status:** ASSIGNED (AcceptedBlocker) - Correção publicada e aguardando build
-- **Assignee:** mulhern
-- **Componente:** stratisd
-- **QA Contact:** Petr Sklenar
-- **Severidade:** High
-- **Última atualização:** 26/10/2026 — correção final publicada (PR #4113) e aguardando build
-- **Última atualização:** 27/10/2026 — correção testada em build de teste e **não funcionou**. Time corre contra o prazo do release.
+- **Última atualização:** 27/10/2026 — correção testada em build de teste e não funcionou. Time corre contra o prazo do release.
   
 ### Links úteis
 
