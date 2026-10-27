@@ -85,6 +85,9 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 | 23/10/2026 | **John Baublitz** anunciou que já tem uma correção em andamento para o problema |
 | 26/10/2026 | **Adam Williamson** cobrou urgência na correção para não atrasar o lançamento do Fedora 45 |
 | 26/10/2026 | **John Baublitz** publicou a correção final (PR #4113) e testou com sucesso em 5 reboots usando um pool com 5 discos |
+| 27/10/2026 | **mulhern** (dev) confirmou que a equipe irá gerar os pacotes com os patches e fornecer os links. |
+| 27/10/2026 | **Kamil Paral** (QA) criou um build de teste no Koji e uma ISO de teste com o PR #4113 (ainda não mesclado). |
+| 27/10/2026 | **Petr Sklenar** testou a nova ISO e o problema **persistiu**. Ele não conseguiu bootar com sucesso nenhuma vez. |
 
 ### Análise
 
@@ -97,7 +100,8 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - O bug foi **aceito como bloqueador oficial** do Fedora 45 (Final Blocker). Isso significa que a equipe de desenvolvimento tem prioridade máxima para corrigi-lo antes do lançamento.
 - A causa raiz foi identificada: o bug ocorre apenas em pools com **múltiplos discos**, devido a uma *race condition* na inicialização (o sistema tenta montar o pool antes do `udev` registrar todos os discos). Uma correção já está sendo desenvolvida.
 - O desenvolvedor **John Baublitz** publicou a correção final (PR #4113) e validou com sucesso em um ambiente de múltiplos discos. A correção está aguardando o build do pacote e a publicação no repositório de testes.
-
+- A correção proposta (PR #4113) **não resolveu o problema** no ambiente de teste do QA. O bug continua em investigação, e o prazo para o lançamento do Fedora 45 está apertado (pode ser dispensado/waived).
+  
 ### Status atual
 
 - **Status:** ASSIGNED (AcceptedBlocker)
@@ -112,10 +116,14 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - **QA Contact:** Petr Sklenar
 - **Severidade:** High
 - **Última atualização:** 26/10/2026 — correção final publicada (PR #4113) e aguardando build
-
+- **Última atualização:** 27/10/2026 — correção testada em build de teste e **não funcionou**. Time corre contra o prazo do release.
+  
 ### Links úteis
 
 - [Logs do teste do Petr Sklenar (inicial)](https://psklenar.fedorapeople.org/bz2543511/)
 - [Logs após regeneração do dracut](https://psklenar.fedorapeople.org/bz2543511/after-dracut-regenerate/)
 - [F45 Go/No-Go Meeting #2 (22/10/2026)](https://meetbot-raw.fedoraproject.org/meeting_matrix_fedoraproject-org/2026-10-22/f45-final-go-no-go-meeting.2026-10-22-17.00.html)
 - [PR #4113 - Correção do bug](https://github.com/stratis-storage/stratisd/pull/4113)
+- [Build de teste no Koji](https://koji.fedoraproject.org/koji/taskinfo?taskID=151717345)
+- [Screencast da instalação do Petr com a nova ISO](https://psklenar.fedorapeople.org/mypaste/bz/)
+  
