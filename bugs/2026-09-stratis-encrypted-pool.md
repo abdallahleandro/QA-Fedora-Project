@@ -8,7 +8,7 @@
 
 **Severidade:** High
 
-**Status:** MODIFIED
+**Status:** VERIFIED
 
 ---
 
@@ -90,6 +90,9 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 | 27/10/2026 | **Petr Sklenar** testou a nova ISO e o problema **persistiu**. Ele não conseguiu bootar com sucesso nenhuma vez. |
 | 28/10/2026 | **Fedora Update System** submeteu a correção oficial: `FEDORA-2026-b0633eb30c` (stratisd-3.9.3-2.fc45) no Bodhi. |
 | 28/10/2026 | **Adam Williamson** gerou um novo scratch build com patch adicional (PR #4113 atualizado). |
+| 29/10/2026 | **Fedora Update System** publicou a correção no repositório `updates-testing` (FEDORA-2026-b0633eb30c). |
+| 29/10/2026 | **Petr Sklenar** (QA) testou a correção: **20 reboots com sucesso**! |
+| 29/10/2026 | **Petr Sklenar** continuou os testes: **~60 reboots** e teste com múltiplos discos. **Tudo estável!** |
 
 ### Análise
 
@@ -104,15 +107,16 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - O desenvolvedor **John Baublitz** publicou a correção final (PR #4113) e validou com sucesso em um ambiente de múltiplos discos. A correção está aguardando o build do pacote e a publicação no repositório de testes.
 - A correção proposta (PR #4113) **não resolveu o problema** no ambiente de teste do QA. O bug continua em investigação, e o prazo para o lançamento do Fedora 45 está apertado (pode ser dispensado/waived).
 - A correção foi oficialmente empacotada e submetida ao Bodhi (`FEDORA-2026-b0633eb30c`). O bug agora está em `MODIFIED`, aguardando validação do update para ser fechado.
+- A correção foi validada com sucesso pelo QA em múltiplos cenários (20 reboots, ~60 reboots e múltiplos discos). O bug está **VERIFIED** e o Fedora 45 está pronto para ser lançado com o Stratis criptografado funcionando.
   
 ### Status atual
 
-- **Status:** MODIFIED (correção submetida ao Bodhi, aguardando validação)
+- **Status:** VERIFIED (correção validada pelo QA)
 - **Assignee:** mulhern
 - **Componente:** stratisd
 - **QA Contact:** Petr Sklenar
 - **Severidade:** High
-- **Última atualização:** 28/10/2026 — correção submetida ao Bodhi (FEDORA-2026-b0633eb30c) e novo scratch build gerado com patch adicional.
+- **Última atualização:** 29/10/2026 — correção validada com ~60 reboots e múltiplos discos. **Bug resolvido!**
   
 ### Links úteis
 
@@ -123,4 +127,5 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - [Build de teste no Koji](https://koji.fedoraproject.org/koji/taskinfo?taskID=151717345)
 - [Screencast da instalação do Petr com a nova ISO](https://psklenar.fedorapeople.org/mypaste/bz/)
 - [Update no Bodhi (FEDORA-2026-b0633eb30c)](https://bodhi.fedoraproject.org/updates/FEDORA-2026-b0633eb30c)
-- [Novo scratch build (PR #4113 atualizado)](https://koji.fedoraproject.org/koji/taskinfo?taskID=151753349)  
+- [Novo scratch build (PR #4113 atualizado)](https://koji.fedoraproject.org/koji/taskinfo?taskID=151753349)
+- [Update no Bodhi (FEDORA-2026-b0633eb30c)](https://bodhi.fedoraproject.org/updates/FEDORA-2026-b0633eb30c)
