@@ -8,7 +8,7 @@
 
 **Severidade:** High
 
-**Status:** VERIFIED
+**Status:** CLOSED ERRATA
 
 ---
 
@@ -93,6 +93,7 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 | 29/10/2026 | **Fedora Update System** publicou a correção no repositório `updates-testing` (FEDORA-2026-b0633eb30c). |
 | 29/10/2026 | **Petr Sklenar** (QA) testou a correção: **20 reboots com sucesso**! |
 | 29/10/2026 | **Petr Sklenar** continuou os testes: **~60 reboots** e teste com múltiplos discos. **Tudo estável!** |
+| 29/10/2026 | **Fedora Update System** publicou a correção no repositório **estável** do Fedora 45 (stratisd-3.9.3-3.fc45). |
 
 ### Análise
 
@@ -108,15 +109,16 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - A correção proposta (PR #4113) **não resolveu o problema** no ambiente de teste do QA. O bug continua em investigação, e o prazo para o lançamento do Fedora 45 está apertado (pode ser dispensado/waived).
 - A correção foi oficialmente empacotada e submetida ao Bodhi (`FEDORA-2026-b0633eb30c`). O bug agora está em `MODIFIED`, aguardando validação do update para ser fechado.
 - A correção foi validada com sucesso pelo QA em múltiplos cenários (20 reboots, ~60 reboots e múltiplos discos). O bug está **VERIFIED** e o Fedora 45 está pronto para ser lançado com o Stratis criptografado funcionando.
-  
+- A correção foi publicada no repositório estável e o bug foi **fechado oficialmente** (`CLOSED ERRATA`). O Fedora 45 agora conta com suporte funcional a pools Stratis criptografados.
+    
 ### Status atual
 
-- **Status:** VERIFIED (correção validada pelo QA)
+- **Status:** CLOSED ERRATA (correção publicada no repositório estável)
 - **Assignee:** mulhern
 - **Componente:** stratisd
 - **QA Contact:** Petr Sklenar
 - **Severidade:** High
-- **Última atualização:** 29/10/2026 — correção validada com ~60 reboots e múltiplos discos. **Bug resolvido!**
+- **Última atualização:** 29/10/2026 — correção publicada no repositório estável e bug fechado.
   
 ### Links úteis
 
@@ -129,3 +131,4 @@ O sistema deveria desbloquear o pool Stratis criptografado e montar `/` e `/home
 - [Update no Bodhi (FEDORA-2026-b0633eb30c)](https://bodhi.fedoraproject.org/updates/FEDORA-2026-b0633eb30c)
 - [Novo scratch build (PR #4113 atualizado)](https://koji.fedoraproject.org/koji/taskinfo?taskID=151753349)
 - [Update no Bodhi (FEDORA-2026-b0633eb30c)](https://bodhi.fedoraproject.org/updates/FEDORA-2026-b0633eb30c)
+- [Update final no Bodhi (FEDORA-2026-b0633eb30c)](https://bodhi.fedoraproject.org/updates/FEDORA-2026-b0633eb30c)
