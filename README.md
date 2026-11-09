@@ -35,6 +35,7 @@ Acredito que **qualidade de software** é uma responsabilidade compartilhada, e 
 | 2026-09-28 | Anaconda F45 — Stratis | 5 Pass, 1 Fail | [Ver](test-days/2026-09-anaconda-f45.md) |
 | 2026-10-12 | Podman Conmon-v3 (F44) | 7/7 Pass | [Ver](test-days/2026-10-podman-conmon-v3.md) |
 | 2026-10-19 | GRUB EFI for Confidential Computing (F45) | 1/1 Pass | [Ver](test-days/2026-10-grub-cc.md) |
+| 2026-11-09 | KDE Plasma 6.8 (F45) | 7/7 Pass | [Ver](test-days/2026-11-kde-plasma-6.8.md) |
 
 ## 🐛 Bugs Reportados
 
